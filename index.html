@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>WIT'S STAR TREK JOURNEY</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&display=swap">
+<style>
+:root{--bg:#03051a;--ln:#26397a;--bl:#4da3ff;--nb:#7a5cff;--tx:#e9f1ff;--dm:#8fa2cf;--gd:#ffc94a;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);background:var(--bg)}
+*,*:before,*:after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:Orbitron,"Segoe UI",system-ui,sans-serif;overflow-x:hidden}
+button{font:inherit;color:inherit;cursor:pointer;border-radius:0}
+#sky{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(60% 45% at 15% 8%,#2b1b6e66,transparent),radial-gradient(55% 40% at 90% 85%,#0e3f9a55,transparent),radial-gradient(35% 25% at 75% 20%,#5b2a8a33,transparent)}
+#sky i{position:absolute;border-radius:50%;background:#d6e6ff;opacity:.55;animation:tw 6s ease-in-out var(--z) infinite}
+@keyframes tw{50%{opacity:.08}}@keyframes up{from{opacity:0;transform:translateY(12px)}}@keyframes spin{to{transform:rotate(360deg)}}@keyframes fill{from{width:0}}@keyframes grow{from{transform:scaleY(0)}}@keyframes pl{50%{opacity:.3}}@keyframes pp{50%{transform:scale(1.3)}}@keyframes sh{to{background-position:-200% 0}}
+main{position:relative;z-index:1;max-width:1040px;margin:0 auto;padding:18px 16px 40px}
+.a{animation:up .7s cubic-bezier(.2,.7,.2,1) backwards;animation-delay:calc(var(--i,0)*60ms)}
+.hud{font:400 10px/1.5 ui-monospace,Menlo,Consolas,monospace;letter-spacing:.16em;color:var(--dm);text-transform:uppercase}
+.on:before{content:"";display:inline-block;width:6px;height:6px;background:#3dffb0;box-shadow:0 0 8px #3dffb0;margin-right:8px;animation:pl 2.6s infinite}
+.row{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+/* landing */
+.land{position:relative;min-height:calc(100svh - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px) - 58px);display:flex;flex-direction:column;justify-content:space-between;padding:26px 8px}
+.land:before,.land:after{content:"";position:absolute;width:30px;height:30px;border:2px solid var(--bl);opacity:.55}
+.land:before{top:0;left:0;border-right:0;border-bottom:0}.land:after{bottom:0;right:0;border-left:0;border-top:0}
+.rg{position:absolute;left:50%;top:46%;width:min(135vw,880px);translate:-50% -50%;opacity:.75;pointer-events:none}
+.rg g{animation:spin 140s linear infinite}.rg g+g{animation-duration:90s;animation-direction:reverse}
+.ctr{position:relative;text-align:center;padding:24px 0}
+h1{margin:14px 0 18px;font-weight:900;line-height:1.08;letter-spacing:.05em;font-size:clamp(2rem,10vw,3.6rem);filter:drop-shadow(0 0 20px #2f7bff77)}
+h1 span{display:block;font-size:.42em;letter-spacing:.7em;margin-right:-.7em;color:var(--gd);margin-bottom:10px}
+h1 b{display:block;background:linear-gradient(180deg,#fff,#8fbcff);-webkit-background-clip:text;background-clip:text;color:transparent}
+@media(min-width:720px){h1 b{display:inline}h1{font-size:clamp(2.4rem,5.6vw,3.6rem)}}
+.tag{font-size:clamp(12px,3.4vw,15px);letter-spacing:.08em;color:#b9caf7;margin:0 0 16px}
+.cats{max-width:560px;margin:0 auto}
+.dv{height:1px;width:min(320px,70%);margin:18px auto;background:linear-gradient(90deg,transparent,var(--bl),transparent)}
+.foot{position:relative;display:flex;flex-direction:column;align-items:center;gap:20px}
+.btn{position:relative;overflow:hidden;font-weight:700;font-size:15px;letter-spacing:.32em;padding:19px 34px 19px 40px;min-height:58px;width:min(100%,340px);border:1px solid var(--bl);background:linear-gradient(90deg,#123a8a88,#4a2c9a88);box-shadow:0 0 22px #2f7bff33;transition:all .3s}
+.btn:after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 35%,#ffffff33 50%,transparent 65%) 200% 0/200% 100%}
+.btn:hover,.btn:focus-visible{letter-spacing:.4em;box-shadow:0 0 34px #4da3ff88;border-color:#fff;outline:0}
+.btn:hover:after{animation:sh 1s}.btn:active{transform:scale(.97)}
+/* navegação */
+.top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:22px}
+.lk{background:none;border:1px solid var(--ln);padding:12px 14px;min-height:44px;font-size:11px;letter-spacing:.12em;font-weight:500;transition:.2s}
+.lk:hover,.lk:focus-visible{border-color:var(--bl);background:#4da3ff1a;outline:0}.lk[disabled]{opacity:.25;pointer-events:none}
+.brand{font-size:clamp(1.15rem,5.2vw,2rem);font-weight:900;letter-spacing:.08em;margin:0 0 6px;text-align:center}
+.pn{border:1px solid var(--ln);background:#0a1030cc;padding:16px 18px;margin:18px auto;max-width:640px}
+.big{font-size:clamp(1.05rem,5vw,1.5rem);font-weight:700;margin:6px 0 10px}
+.bar{height:8px;background:#16225a;border:1px solid #2a3d8a;overflow:hidden}
+.bar i{display:block;height:100%;width:var(--w);background:linear-gradient(90deg,var(--bl),var(--nb),var(--gd) 120%);background-size:200% 100%;transition:width .6s;animation:fill 1.2s ease backwards,sh 6s linear infinite}
+/* timeline */
+.pt{display:block;width:min(100%,520px);margin:26px auto 0;text-align:center;background:linear-gradient(160deg,#1b1650dd,#0a1a4ddd);border:1px solid var(--gd);padding:30px 20px;box-shadow:0 0 40px #ffc94a22,inset 0 0 40px #ffc94a10;transition:.3s;position:relative}
+.pt:hover,.pt:focus-visible{box-shadow:0 0 50px #ffc94a55,inset 0 0 40px #ffc94a1c;transform:translateY(-3px);outline:0}
+.pt h3{margin:8px 0 2px;font-size:clamp(1.3rem,6vw,2rem);letter-spacing:.1em;color:var(--gd)}
+.pt .yr{font-size:clamp(2.2rem,12vw,3.6rem);font-weight:900;line-height:1.1}
+.sp{width:2px;height:54px;margin:0 auto;background:linear-gradient(var(--gd),var(--bl));transform-origin:top;animation:grow 1s .3s backwards;position:relative}
+.sp:after{content:"";position:absolute;bottom:-4px;left:-3px;width:8px;height:8px;background:var(--bl);transform:rotate(45deg)}
+.gr{display:grid;gap:14px;grid-template-columns:1fr;margin-top:6px}
+@media(min-width:560px){.gr{grid-template-columns:1fr 1fr}}@media(min-width:900px){.gr{grid-template-columns:repeat(3,1fr)}}
+.er{text-align:left;padding:18px;min-height:130px;border:1px solid var(--ln);border-top:3px solid hsl(var(--h) 85% 62%);background:linear-gradient(180deg,#0e1747cc,#080d2ccc);transition:.25s}
+.er:hover,.er:focus-visible{border-color:hsl(var(--h) 85% 62%);transform:translateY(-3px);box-shadow:0 8px 26px hsl(var(--h) 90% 55%/.25);outline:0}
+.er h3{margin:0;font-size:1.25rem;letter-spacing:.1em}
+.er .y{font:500 14px ui-monospace,Menlo,monospace;color:hsl(var(--h) 85% 72%);margin:4px 0 12px}
+.er .n{font-size:12px;margin-top:9px;color:#c7d5fa}
+/* era */
+.eh{text-align:center}.eh h2{margin:6px 0 2px;font-size:clamp(1.8rem,9vw,2.8rem);font-weight:900;letter-spacing:.08em}
+.eh .y{font:500 15px ui-monospace,Menlo,monospace;color:hsl(var(--h) 85% 72%)}
+.ct{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}.ct .lk{flex:1 1 140px}
+ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.it label{position:relative;display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;padding:14px 16px;min-height:66px;cursor:pointer;background:linear-gradient(90deg,#0e1747dd,#0a1030bb);border:1px solid var(--ln);border-left:4px solid var(--c);transition:.25s}
+.it label:hover{border-color:var(--c);transform:translateX(2px)}
+.it input{position:absolute;opacity:0}
+.bx{width:26px;height:26px;border:2px solid var(--dm);transition:.25s;position:relative}
+.bx.pp{animation:pp .3s}
+input:focus-visible+.bx{outline:2px solid var(--gd);outline-offset:2px}
+input:checked+.bx{background:var(--gd);border-color:var(--gd)}
+input:checked+.bx:after{content:"";position:absolute;left:7px;top:2px;width:7px;height:13px;border:solid #1a1400;border-width:0 3px 3px 0;transform:rotate(45deg)}
+.t{display:block;font-weight:500;font-size:clamp(14px,3.9vw,17px);letter-spacing:.03em;line-height:1.3;overflow-wrap:anywhere;transition:.25s}
+.m{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;margin-top:8px}
+.bg{font:700 10px Orbitron,sans-serif;letter-spacing:.14em;padding:4px 8px;border:1px solid var(--c);color:var(--c);background:#ffffff0a}
+.dt{font:500 13px ui-monospace,Menlo,monospace;color:#c3d0f5}.nt{font:400 11px ui-monospace,Menlo,monospace;color:var(--gd);letter-spacing:.08em}
+.ps{font:400 11px ui-monospace,Menlo,monospace;color:var(--dm);align-self:start}
+.dn label{opacity:.55;background:#080d2ccc}.dn .t{text-decoration:line-through;text-decoration-color:var(--gd);text-decoration-thickness:2px}
+.pg{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:26px}.pg .lk:nth-child(2){grid-column:1/-1;order:3}
+@media(min-width:640px){.pg{grid-template-columns:1fr auto 1fr}.pg .lk:nth-child(2){grid-column:auto;order:0;padding:12px 30px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style></head><body>
+<div id="sky"></div><main id="v"></main>
+<script>
+const RAW=`#PRIMEIRO CONTATO|2063
+F|STAR TREK: FIRST CONTACT|2063|PASSADO
+#1ª ERA|2151–2161
+S|ENTERPRISE S1|2151/2152
+S|ENTERPRISE S2|2152/2153
+S|ENTERPRISE S3|2153/2154
+S|ENTERPRISE S4|2154/2155|⏸ PAUSA NARRATIVA
+L|The Good That Men Do|2155
+L|Kobayashi Maru|2155
+L|Beneath the Raptor's Wing|2155/2156
+L|To Brave the Storm|2156/2161
+S|ENTERPRISE 4x22|2161
+L|Federation: The First 150 Years|retrospectiva 2063/2311
+#2ª ERA|2230s–2258
+T|The Girl Who Made the Stars|2230s
+T|The Brightest Star|2239
+L|Drastic Measures|2246
+T|Q&A|2254
+S|The Cage|2254
+S|DISCOVERY S1|2256/2257
+L|The Enterprise War|2256/2257
+T|Runaway|2257
+T|The Escape Artist|2257
+F|Section 31|2257
+S|DISCOVERY S2|2257/2258
+T|The Trouble with Edward|2250s
+T|Ask Not|2250s
+#3ª ERA|2259–2293
+S|SNW S1|2259
+S|SNW S2|2259/2260
+S|SNW S3|2260/2261
+S|SNW S4|2262/2263
+S|SNW S5|sem data confirmada
+S|TOS S1|2266/2267
+S|TOS S2|2267/2268
+S|TOS S3|2268/2269
+T|Ephraim and Dot|2267-2285
+A|TAS S1|2269/2270
+A|TAS S2|2270
+F|The Motion Picture|2273
+L|Spock's World|2275
+L|Doctor's Orders|2275/2277
+F|The Wrath of Khan|2285
+F|The Search for Spock|2285
+F|The Voyage Home|2286 / 1986
+F|The Final Frontier|2287
+F|The Undiscovered Country|2293
+#4ª ERA|2355–2379
+L|The Buried Age|2355–2364
+S|THE NEXT GENERATION S1|2364/2365
+S|THE NEXT GENERATION S2|2365/2366
+S|THE NEXT GENERATION S3|2366/2367
+S|THE NEXT GENERATION S4|2367/2368
+S|THE NEXT GENERATION S5|2368/2369
+S|DEEP SPACE NINE S1|2369/2370
+S|THE NEXT GENERATION S6|2369/2370
+S|DEEP SPACE NINE S2|2370/2371
+S|THE NEXT GENERATION S7|2370/2371
+F|GENERATIONS|2371
+S|DEEP SPACE NINE S3|2371/2372
+S|VOYAGER S1|2371/2372
+S|DEEP SPACE NINE S4|2372/2373
+S|VOYAGER S2|2372/2373
+L|Mosaic|2372s
+L|The 34th Rule|2372
+S|DEEP SPACE NINE S5|2373/2374
+S|VOYAGER S3|2373/2374
+F|FIRST CONTACT|2373|MESMO FILME / PRESENTE
+S|DEEP SPACE NINE S6|2374/2375
+S|VOYAGER S4|2374/2375
+S|DEEP SPACE NINE S7|2375/2376
+S|VOYAGER S5|2375/2376
+F|INSURRECTION|2375
+S|VOYAGER S6|2376/2377
+S|VOYAGER S7|2377/2378
+F|NEMESIS|2379
+#5ª ERA|2380–2402
+A|LOWER DECKS S1|2380
+A|LOWER DECKS S2|2380/2381
+A|LOWER DECKS S3|2381
+A|LOWER DECKS S4|2381
+A|LOWER DECKS S5|2382
+A|PRODIGY S1|2383/2384
+A|PRODIGY S2|2384/2385
+T|Children of Mars|2385
+S|PICARD S1|2399
+S|PICARD S2|2401
+S|PICARD S3|2402
+#6ª ERA|3188–século XLI
+S|DISCOVERY S3|3188/3189
+S|DISCOVERY S4|3190
+S|DISCOVERY S5|3191
+S|STARFLEET ACADEMY S1|3195
+S|STARFLEET ACADEMY S2|sem data confirmada
+T|CALYPSO|século XLI`;
+const TY={F:['🎬','FILME',45],S:['📺','SÉRIE',205],A:['🎞️','ANIMAÇÃO',280],L:['📖','LIVRO',160],T:['✨','SHORT TREK',330]};
+const E=[];let G=0;
+RAW.split('\n').forEach(l=>{if(l[0]=='#'){const[n,y]=l.slice(1).split('|');E.push({n,y,it:[],h:[45,200,214,228,246,264,282][E.length]})}else{const[t,ti,d,nt]=l.split('|');E[E.length-1].it.push({t,ti,d,nt,g:++G})}});
+let D=new Set;try{D=new Set(JSON.parse(localStorage.getItem('wstj')||'[]'))}catch(e){}
+const save=()=>{try{localStorage.setItem('wstj',JSON.stringify([...D]))}catch(e){}};
+const V=document.getElementById('v'),q=s=>document.querySelector(s),T=G;
+const cnt=e=>e.it.filter(i=>D.has(i.g)).length;
+const bar=(d,n,id)=>`<div class="bar"><i ${id?`id="${id}"`:''} style="--w:${n?d/n*100:0}%"></i></div>`;
+for(let i=0;i<90;i++){const s=document.createElement('i'),z=1+Math.random()*1.6;s.style.cssText=`left:${Math.random()*100}%;top:${Math.random()*100}%;width:${z}px;height:${z}px;--z:${Math.random()*6}s`;q('#sky').appendChild(s)}
+
+const land=()=>`<div class="land"><div class="row hud a"><span class="on">System online</span><span>Sector 001 · Sol</span></div>
+<svg class="rg" viewBox="-200 -200 400 400" fill="none" stroke="#4da3ff" aria-hidden="true"><g><circle r="190" stroke-opacity=".3" stroke-dasharray="1 7"/><circle r="150" stroke-opacity=".22" stroke-dasharray="50 16 3 16"/></g><g><circle r="112" stroke-opacity=".25" stroke-dasharray="14 10"/><circle r="70" stroke="#ffc94a" stroke-opacity=".2"/></g><path d="M-200 0H200M0-200V200" stroke-opacity=".1"/><path d="M-60-60L0-90 60-60 60 60 0 90-60 60Z" stroke-opacity=".12"/></svg>
+<div class="ctr"><div class="hud a" style="--i:1">Federation archive // Personal log</div>
+<h1 class="a" style="--i:2"><span>WIT'S</span><b>STAR TREK</b> <b>JOURNEY</b></h1><div class="dv a" style="--i:3"></div>
+<p class="tag a" style="--i:4">“A personal journey through the Star Trek timeline.”</p>
+<div class="hud cats a" style="--i:5">Series • Films • Books • Animations • Short Treks</div></div>
+<div class="foot a" style="--i:6"><button class="btn" data-go="t">BEGIN JOURNEY</button><div class="hud" style="text-align:center">Earth · 45.68°N 111.04°W · 2063.04.05<br>${T} stories archived</div></div></div>`;
+
+const tl=()=>{const d=D.size,p=Math.round(d/T*100),f=E[0];
+return`<div class="top a"><button class="lk" data-go="l">← INÍCIO</button><span class="hud on">System online</span></div>
+<h2 class="brand a">WIT'S STAR TREK JOURNEY</h2><div class="hud a" style="text-align:center;--i:1">Chronological timeline</div>
+<div class="pn a" style="--i:2"><div class="row hud"><span>Mission progress</span><span>${p}%</span></div><div class="big">${d} / ${T} COMPLETED</div>${bar(d,T)}<div class="hud" style="margin-top:10px">Timeline status: ${d} of ${T} stories completed</div></div>
+<button class="pt a" style="--i:3" data-go="e0"><div class="hud">Ponto de partida da jornada</div><h3>${f.n}</h3><div class="yr">${f.y}</div><div class="hud" style="margin:6px 0 14px">${f.it[0].ti}</div>${bar(cnt(f),1)}<div class="hud" style="margin-top:10px">${cnt(f)} / 1 concluído</div></button>
+<div class="sp"></div><div class="gr" style="margin-top:8px">${E.slice(1).map((e,k)=>`<button class="er a" style="--h:${e.h};--i:${k+4}" data-go="e${k+1}"><h3>${e.n}</h3><div class="y">${e.y}</div>${bar(cnt(e),e.it.length)}<div class="n">${cnt(e)} / ${e.it.length} concluídos</div></button>`).join('')}</div>`};
+
+const era=k=>{const e=E[k];
+return`<div class="top a"><button class="lk" data-go="t">← VOLTAR À TIMELINE</button><span class="hud on">System online</span></div>
+<div class="eh a" style="--h:${e.h};--i:1"><div class="hud">Arquivo da era · ${e.it.length} itens</div><h2>${e.n}</h2><div class="y">${e.y}</div></div>
+<div class="pn a" style="--i:2"><div class="row hud"><span>Progresso da era</span><span id="pt2"></span></div>${bar(0,1,'pb')}
+<div class="ct"><button class="lk" data-a="all">MARCAR TODOS</button><button class="lk" data-a="clr">LIMPAR PROGRESSO</button></div></div>
+<ul>${e.it.map((i,n)=>{const[ic,lb,h]=TY[i.t];return`<li class="it a" style="--c:hsl(${h} 90% 64%);--i:${Math.min(n,10)+3}"><label><input type="checkbox" data-k="${i.g}"><span class="bx"></span><span><b class="t">${i.ti}</b><span class="m"><em class="bg" style="font-style:normal">${ic} ${lb}</em><span class="dt">${i.d}</span>${i.nt?`<span class="nt">${i.nt}</span>`:''}</span></span><span class="ps">#${String(i.g).padStart(2,'0')}</span></label></li>`}).join('')}</ul>
+<div class="pg"><button class="lk" data-go="e${k-1}" ${k?'':'disabled'}>← ERA ANTERIOR</button><button class="lk" data-go="t">TIMELINE</button><button class="lk" data-go="e${k+1}" ${E[k+1]?'':'disabled'}>PRÓXIMA ERA →</button></div>`};
+
+let cur=-1;
+function sync(){if(cur<0)return;const e=E[cur],d=cnt(e);
+document.querySelectorAll('.it input').forEach(i=>{const on=D.has(+i.dataset.k);i.checked=on;i.closest('li').classList.toggle('dn',on)});
+q('#pb').style.setProperty('--w',d/e.it.length*100+'%');q('#pt2').textContent=`${d} / ${e.it.length} concluídos`}
+function R(){const h=(location.hash||'#l').slice(1);cur=h[0]=='e'&&E[+h.slice(1)]?+h.slice(1):-1;
+V.innerHTML=cur>=0?era(cur):h=='t'?tl():land();window.scrollTo(0,0);sync()}
+const go=v=>{if(location.hash=='#'+v)R();else location.hash=v};
+addEventListener('hashchange',R);
+V.addEventListener('click',ev=>{const b=ev.target.closest('[data-go],[data-a]');if(!b)return;
+if(b.dataset.go)return go(b.dataset.go);
+const its=E[cur].it;
+if(b.dataset.a=='all')its.forEach(i=>D.add(i.g));
+else{if(!b.dataset.c){b.dataset.c=1;b.textContent='CONFIRMAR?';setTimeout(()=>{delete b.dataset.c;b.textContent='LIMPAR PROGRESSO'},3000);return}
+its.forEach(i=>D.delete(i.g));delete b.dataset.c;b.textContent='LIMPAR PROGRESSO'}
+save();sync()});
+V.addEventListener('change',ev=>{const i=ev.target,k=+i.dataset.k;if(!k)return;
+i.checked?D.add(k):D.delete(k);save();sync();const x=i.nextElementSibling;x.classList.remove('pp');void x.offsetWidth;x.classList.add('pp')});
+R();
+</script></body></html>
